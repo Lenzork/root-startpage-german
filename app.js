@@ -4,52 +4,13 @@
 
 /* -------------------------------------------------------- */
 
-const NAME = "Reyes";
+const NAME = "Lukas";
 
 const CARDS = [
   {
-    name: "Discord",
-    icon: "ri-discord-fill",
-    link: "https://discord.com/app",
-    color: "#5865F2",
-  },
-  {
-    name: "Reddit",
-    icon: "ri-reddit-fill",
-    link: "https://www.reddit.com/",
-    color: "#FF4500",
-  },
-  {
-    name: "Figma",
-    icon: "ri-pen-nib-fill",
-    link: "https://www.figma.com/",
-  },
-  {
-    name: "Github",
-    icon: "ri-github-fill",
-    link: "https://github.com/",
-  },
-  {
-    name: "Twitter",
-    icon: "ri-twitter-fill",
-    link: "https://twitter.com",
-    color: "#1DA1F2",
-  },
-  {
-    name: "Dribbble",
-    icon: "ri-dribbble-fill",
-    link: "https://dribbble.com/",
-    color: "#ea4c89",
-  },
-  {
-    name: "Hashnode",
-    icon: "ri-newspaper-line",
-    link: "https://hashnode.com/",
-  },
-  {
-    name: "CodeSandbox",
-    icon: "ri-braces-fill",
-    link: "https://codesandbox.io/dashboard/",
+    name: "Gmail",
+    icon: "ri-google-fill",
+    link: "https://mail.google.com/",
   },
   {
     name: "YouTube",
@@ -58,14 +19,25 @@ const CARDS = [
     color: "#FF0000",
   },
   {
-    name: "LinkedIn",
-    icon: "ri-linkedin-fill",
-    link: "https://www.linkedin.com/",
+    name: "Discord",
+    icon: "ri-discord-fill",
+    link: "https://discord.com/app",
+    color: "#5865F2",
   },
   {
-    name: "Gmail",
-    icon: "ri-google-fill",
-    link: "https://mail.google.com/",
+    name: "Hubba",
+    icon: "ri-chat-2-fill",
+    link: "https://hubba.cc/",
+  },
+  {
+    name: "Figma",
+    icon: "ri-pen-nib-fill",
+    link: "https://www.figma.com/",
+  },
+  {
+    name: "CodeSandbox",
+    icon: "ri-braces-fill",
+    link: "https://codesandbox.io/dashboard/",
   },
 ];
 
@@ -76,28 +48,28 @@ const CARDS = [
 /******************/
 
 const DAYS = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
+  "Sonntag",
+  "Montag",
+  "Dienstag",
+  "Mittwoch",
+  "Donnerstag",
+  "Freitag",
+  "Samstag",
 ];
 
 const MONTHS = [
-  "January",
-  "February",
-  "March",
+  "Januar",
+  "Februar",
+  "März",
   "April",
-  "May",
-  "June",
-  "July",
+  "Mai",
+  "Juni",
+  "Juli",
   "August",
   "September",
-  "October",
+  "Oktober",
   "November",
-  "December",
+  "Dezember",
 ];
 
 const updateDate = () => {
@@ -115,9 +87,7 @@ const updateDate = () => {
   let currentYear = completeDate.getFullYear();
 
   // Update the Time
-  currentTime.innerHTML = `${
-    currentHour % 12 == 0 ? "12" : currentHour % 12
-  }:${currentMinute} ${currentHour > 11 ? "PM" : "AM"}`;
+  currentTime.innerHTML = `${currentHour}:${currentMinute}`;
 
   // Update the Date
   currentDate.innerHTML = `${DAYS[currentDay]} ${currentNumber}, ${MONTHS[currentMonth]} ${currentYear}`;
@@ -228,6 +198,29 @@ const printCards = () => {
     });
   }
 };
+
+/*****************/
+/* GOOGLE SEARCH */
+/*****************/
+
+const googleTextBox = document.getElementById("googlesearch");
+
+googleTextBox.addEventListener("keyup", function(event) {
+  if (event.key === "Enter") {
+      searchOnGoogle();
+  }
+});
+
+const searchOnGoogle = () => {
+  // Get the Text in the Google Textbox
+  const searchQuery = googleTextBox.value;
+
+  // Generate Google Link
+  const googleLink = `http://www.google.com/search?q=${searchQuery}`;
+
+  // Send to Google
+  window.open(googleLink, "_blank");
+}
 
 /****************/
 /* STARTER CODE */

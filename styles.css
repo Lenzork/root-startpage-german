@@ -46,6 +46,21 @@ main {
   justify-content: center;
 }
 
+#googlesearch {
+  width: 82%;
+  background-color: var(--background-light);
+  color: white;
+  font-size: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 25px;
+  padding: 25px;
+}
+
+#googlesearch:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
 footer {
   color: rgba(255, 255, 255, 0.4);
   font-size: 0.8rem;
